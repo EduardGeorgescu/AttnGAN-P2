@@ -236,7 +236,7 @@ class condGANTrainer(object):
         gen_iterations = 0
         # gen_iterations = start_epoch * self.num_batches
         for epoch in range(start_epoch, self.max_epoch):
-            print ("epoch:", epoch, "out of", self.max_epoch)
+            print ("time:", time.time(), "epoch:", epoch, "out of", self.max_epoch)
 
             start_t = time.time()
 
@@ -247,7 +247,7 @@ class condGANTrainer(object):
                 # self.set_requires_grad_value(netsD, True)
 
                 if step % 25 == 0:
-                  print ("step is:", step, "out of", self.num_batches)
+                  print ("time:", time.time(), "step is:", step, "out of", self.num_batches)
 
                 ######################################################
                 # (1) Prepare training data and Compute text embeddings
