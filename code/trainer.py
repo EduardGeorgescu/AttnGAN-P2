@@ -233,8 +233,6 @@ class condGANTrainer(object):
         if cfg.CUDA:
             noise, fixed_noise = noise.cuda(), fixed_noise.cuda()
 
-        
-
         gen_iterations = 0
         # gen_iterations = start_epoch * self.num_batches
         for epoch in range(start_epoch, self.max_epoch):
