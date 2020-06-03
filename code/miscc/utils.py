@@ -12,6 +12,8 @@ import skimage.transform
 
 from miscc.config import cfg
 
+from io import BytesIO
+
 
 # For visualization ################################################
 COLOR_DIC = {0:[128,64,128],  1:[244, 35,232],
@@ -32,9 +34,13 @@ def drawCaption(convas, captions, ixtoword, vis_size, off1=2, off2=2):
     img_txt = Image.fromarray(convas)
     # get a font
     # fnt = None  # ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', 50)
-    fnt = ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', 50)
+    file = open('Pillow/Tests/fonts/FreeMono.ttf', "rb")
+    bytes_font = BytesIO(file.read())
+    fnt = ImageFont.truetype(bytes_font, 50)
+
+    # fnt = ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', 50)
     # get a drawing context
-    d = ImageDraw.Draw(img_txt)
+    # d = ImageDraw.Draw(img_txt)
     sentence_list = []
     for i in range(num):
         cap = captions[i].data.cpu().numpy()
