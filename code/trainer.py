@@ -397,10 +397,12 @@ class condGANTrainer(object):
 
             cnt = 0
 
+            # !!!! TEXT.CAPTIONS_PER_IMAGE
             for _ in range(1):  # (cfg.TEXT.CAPTIONS_PER_IMAGE):
                 for step, data in enumerate(self.data_loader, 0):
                     cnt += batch_size
-                    if step % 100 == 0:
+                    
+                    if step % 25 == 0:
                         print('step: ', step)
                     # if step > 50:
                     #     break
