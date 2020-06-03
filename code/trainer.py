@@ -236,6 +236,8 @@ class condGANTrainer(object):
         gen_iterations = 0
         # gen_iterations = start_epoch * self.num_batches
         for epoch in range(start_epoch, self.max_epoch):
+            print ("epoch:", epoch, "out of", self.max_epoch)
+
             start_t = time.time()
 
             data_iter = iter(self.data_loader)
@@ -296,7 +298,7 @@ class condGANTrainer(object):
                                    words_embs, sent_emb, match_labels, cap_lens, class_ids)
                 kl_loss = KL_loss(mu, logvar)
                 errG_total += kl_loss
-                G_logs += 'kl_loss: %.2f ' % kl_loss.data[0]
+                G_logs += 'kl_loss: %.2f ' % kl_loss.data
                 # backward and update parameters
                 errG_total.backward()
                 optimizerG.step()
