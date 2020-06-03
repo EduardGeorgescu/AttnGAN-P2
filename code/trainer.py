@@ -401,7 +401,7 @@ class condGANTrainer(object):
             for _ in range(1):  # (cfg.TEXT.CAPTIONS_PER_IMAGE):
                 for step, data in enumerate(self.data_loader, 0):
                     cnt += batch_size
-                    
+
                     if step % 25 == 0:
                         print('step: ', step)
                     # if step > 50:
@@ -425,6 +425,10 @@ class condGANTrainer(object):
                     noise.data.normal_(0, 1)
                     fake_imgs, _, _, _ = netG(noise, sent_emb, words_embs, mask)
                     for j in range(batch_size):
+
+                        if j % 10 == 0:
+                            print ("crt j:", j, "out of", batch_size)
+                            
                         s_tmp = '%s/single/%s' % (save_dir, keys[j])
                         folder = s_tmp[:s_tmp.rfind('/')]
                         if not os.path.isdir(folder):
