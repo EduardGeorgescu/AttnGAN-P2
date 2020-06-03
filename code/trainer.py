@@ -236,7 +236,7 @@ class condGANTrainer(object):
         gen_iterations = 0
         # gen_iterations = start_epoch * self.num_batches
         for epoch in range(start_epoch, self.max_epoch):
-            print ("time:", time.time(), "epoch:", epoch, "out of", self.max_epoch)
+            print ("time:", time.asctime(), "epoch:", epoch, "out of", self.max_epoch)
 
             start_t = time.time()
 
@@ -247,7 +247,7 @@ class condGANTrainer(object):
                 # self.set_requires_grad_value(netsD, True)
 
                 if step % 25 == 0:
-                  print ("time:", time.time(), "step is:", step, "out of", self.num_batches)
+                  print ("time:", time.asctime(), "step is:", step, "out of", self.num_batches)
 
                 ######################################################
                 # (1) Prepare training data and Compute text embeddings
@@ -328,7 +328,7 @@ class condGANTrainer(object):
             print('''[%d/%d][%d]
                   Loss_D: %.2f Loss_G: %.2f Time: %.2fs'''
                   % (epoch, self.max_epoch, self.num_batches,
-                     errD_total.data[0], errG_total.data[0],
+                     errD_total.data, errG_total.data,
                      end_t - start_t))
 
             if epoch % cfg.TRAIN.SNAPSHOT_INTERVAL == 0:  # and epoch != 0:
