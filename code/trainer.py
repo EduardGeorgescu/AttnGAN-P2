@@ -394,7 +394,8 @@ class condGANTrainer(object):
             print('Load G from: ', model_dir)
 
             # the path to save generated images
-            s_tmp = model_dir[:model_dir.rfind('.pth')]
+            # s_tmp = model_dir[:model_dir.rfind('.pth')]
+            s_tmp = "/content/BIRDS/My Drive/validation"
             save_dir = '%s/%s' % (s_tmp, split_dir)
             mkdir_p(save_dir)
 
