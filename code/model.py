@@ -544,7 +544,7 @@ class D_GET_LOGITS(nn.Module):
 
         self.outlogits = nn.Sequential(
             nn.Conv2d(ndf * 8, 1, kernel_size=4, stride=4),
-            torch.Sigmoid())
+            nn.Sigmoid())
 
     def forward(self, h_code, c_code=None):
         if self.bcondition and c_code is not None:
