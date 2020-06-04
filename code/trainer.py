@@ -249,6 +249,9 @@ class condGANTrainer(object):
                 if step % 25 == 0:
                   print ("time:", time.asctime(), "step is:", step, "out of", self.num_batches)
 
+                if step > 50:
+                    break
+
                 ######################################################
                 # (1) Prepare training data and Compute text embeddings
                 ######################################################
@@ -428,7 +431,7 @@ class condGANTrainer(object):
 
                         if j % 10 == 0:
                             print ("crt j:", j, "out of", batch_size)
-                            
+
                         s_tmp = '%s/single/%s' % (save_dir, keys[j])
                         folder = s_tmp[:s_tmp.rfind('/')]
                         if not os.path.isdir(folder):

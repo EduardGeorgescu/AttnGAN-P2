@@ -20,7 +20,7 @@ class GLU(nn.Module):
         nc = x.size(1)
         assert nc % 2 == 0, 'channels dont divide 2!'
         nc = int(nc/2)
-        return x[:, :nc] * F.sigmoid(x[:, nc:])
+        return x[:, :nc] * torch.sigmoid(x[:, nc:])
 
 
 def conv1x1(in_planes, out_planes, bias=False):
@@ -544,7 +544,7 @@ class D_GET_LOGITS(nn.Module):
 
         self.outlogits = nn.Sequential(
             nn.Conv2d(ndf * 8, 1, kernel_size=4, stride=4),
-            nn.Sigmoid())
+            torch.Sigmoid())
 
     def forward(self, h_code, c_code=None):
         if self.bcondition and c_code is not None:
