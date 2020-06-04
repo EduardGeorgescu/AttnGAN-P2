@@ -250,7 +250,7 @@ class condGANTrainer(object):
                   print ("time:", time.asctime(), "step is:", step, "out of", self.num_batches)
 
                 # if step > 50:
-                #     break
+                    # break
 
                 ######################################################
                 # (1) Prepare training data and Compute text embeddings
@@ -469,7 +469,9 @@ class condGANTrainer(object):
                 netG = G_DCGAN()
             else:
                 netG = G_NET()
-            s_tmp = cfg.TRAIN.NET_G[:cfg.TRAIN.NET_G.rfind('.pth')]
+            # Used for save location
+            # s_tmp = cfg.TRAIN.NET_G[:cfg.TRAIN.NET_G.rfind('.pth')]
+            s_tmp = "/content/BIRDS/My Drive"
             model_dir = cfg.TRAIN.NET_G
             state_dict = \
                 torch.load(model_dir, map_location=lambda storage, loc: storage)
@@ -478,7 +480,9 @@ class condGANTrainer(object):
             netG.cuda()
             netG.eval()
             for key in data_dic:
+                print ("At key:", key)
                 save_dir = '%s/%s' % (s_tmp, key)
+                print ("save_dir is:", save_dir)
                 mkdir_p(save_dir)
                 captions, cap_lens, sorted_indices = data_dic[key]
 
@@ -490,7 +494,7 @@ class condGANTrainer(object):
 
                 captions = captions.cuda()
                 cap_lens = cap_lens.cuda()
-                for i in range(1):  # 16
+                for i in range(5):  # 16
                     with torch.no_grad():
                         noise = Variable(torch.FloatTensor(batch_size, nz))
                     noise = noise.cuda()
@@ -510,6 +514,7 @@ class condGANTrainer(object):
                     # G attention
                     cap_lens_np = cap_lens.cpu().data.numpy()
                     for j in range(batch_size):
+                        print ("j is:", j, "out of", batch_size)
                         save_name = '%s/%d_s_%d' % (save_dir, i, sorted_indices[j])
                         for k in range(len(fake_imgs)):
                             im = fake_imgs[k][j].data.cpu().numpy()
@@ -520,6 +525,7 @@ class condGANTrainer(object):
                             # print('im', im.shape)
                             im = Image.fromarray(im)
                             fullpath = '%s_g%d.png' % (save_name, k)
+                            print ("fullpath location is:", fullpath)
                             im.save(fullpath)
 
                         for k in range(len(attention_maps)):
