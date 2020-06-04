@@ -1,9 +1,9 @@
 CONFIG_NAME: 'attn2'
 
 DATASET_NAME: 'birds'
-DATA_DIR: '../data/birds'
+DATA_DIR: '/content/BIRDS/My Drive/birds' # '../data/birds'
 GPU_ID: 0
-WORKERS: 1
+WORKERS: 4
 
 
 TREE:
@@ -14,9 +14,9 @@ TRAIN:
     FLAG: True
     NET_G: ''  # '../models/bird_AttnGAN2.pth'
     B_NET_D: True
-    BATCH_SIZE: 2  # 22
-    MAX_EPOCH: 51
-    SNAPSHOT_INTERVAL: 50
+    BATCH_SIZE: 20  # 22
+    MAX_EPOCH: 21
+    SNAPSHOT_INTERVAL: 5
     DISCRIMINATOR_LR: 0.0002
     GENERATOR_LR: 0.0002
     #
