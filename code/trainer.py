@@ -249,8 +249,8 @@ class condGANTrainer(object):
                 if step % 25 == 0:
                   print ("time:", time.asctime(), "step is:", step, "out of", self.num_batches)
 
-                if step > 50:
-                    break
+                # if step > 50:
+                #     break
 
                 ######################################################
                 # (1) Prepare training data and Compute text embeddings
