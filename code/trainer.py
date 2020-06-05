@@ -246,8 +246,8 @@ class condGANTrainer(object):
                 # reset requires_grad to be trainable for all Ds
                 # self.set_requires_grad_value(netsD, True)
 
-                if step % 100 == 0:
-                  print ("time:", time.asctime(), "step is:", step, "out of", self.num_batches)
+                # if step % 100 == 0:
+                #   print ("time:", time.asctime(), "step is:", step, "out of", self.num_batches)
 
                 # if step > 50:
                     # break
