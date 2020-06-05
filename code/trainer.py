@@ -495,7 +495,7 @@ class condGANTrainer(object):
 
                 captions = captions.cuda()
                 cap_lens = cap_lens.cuda()
-                for i in range(5):  # 16
+                for i in range(5):  # 16 
                     with torch.no_grad():
                         noise = Variable(torch.FloatTensor(batch_size, nz))
                     noise = noise.cuda()

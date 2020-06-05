@@ -5,7 +5,7 @@ There are two docker files:
 2. [dockerfile.gpu](dockerfile.gpu) - creates a GPU bound container
 
 # Requirements
-The app uses Azure Blob Storage as an image repository as well as Application Insights for logging telemetry.
+The app uses Azure Blob Storage as an image repository as well as Application Insights for logging teFlemetry.
 
 # Running the Application
 There is a three step process running the application and generating bird images.
