@@ -402,11 +402,11 @@ class condGANTrainer(object):
             cnt = 0
 
             # !!!! TEXT.CAPTIONS_PER_IMAGE
-            for _ in range(1):  # (cfg.TEXT.CAPTIONS_PER_IMAGE):
+            for _ in range(cfg.TEXT.CAPTIONS_PER_IMAGE):  # 1 # (cfg.TEXT.CAPTIONS_PER_IMAGE):
                 for step, data in enumerate(self.data_loader, 0):
                     cnt += batch_size
 
-                    if step % 25 == 0:
+                    if step % 100 == 0:
                         print('step: ', step)
                     # if step > 50:
                     #     break
@@ -495,7 +495,7 @@ class condGANTrainer(object):
 
                 captions = captions.cuda()
                 cap_lens = cap_lens.cuda()
-                for i in range(5):  # 16 
+                for i in range(cfg.TEXT.CAPTIONS_PER_IMAGE):  # 1 # 16 
                     with torch.no_grad():
                         noise = Variable(torch.FloatTensor(batch_size, nz))
                     noise = noise.cuda()

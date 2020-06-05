@@ -110,8 +110,11 @@ if __name__ == "__main__":
 
     now = datetime.datetime.now(dateutil.tz.tzlocal())
     timestamp = now.strftime('%Y_%m_%d_%H_%M_%S')
-    output_dir = '../output/%s_%s_%s' % \
-        (cfg.DATASET_NAME, cfg.CONFIG_NAME, timestamp)
+    # output_dir = '../output/%s_%s_%s' % \
+    #     (cfg.DATASET_NAME, cfg.CONFIG_NAME, timestamp)
+
+    output_dir = '/content/BIRDS/My Drive/output/%s/%s_%s' % \
+            (cfg.CONFIG_NAME, cfg.DATASET_NAME, timestamp)
 
     print ("main output dir is:", output_dir)
 
