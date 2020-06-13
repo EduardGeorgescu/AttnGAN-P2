@@ -5,16 +5,17 @@ from model import get_inception_score
 import os
 import cv2
 
-IMAGE_DIR = "/home/edy/Desktop/Master/Semestrul 2/Research/AttnGAN-Python2/models/bird_AttnGAN2/valid/single/"
+IMAGE_DIR = "/content/BIRDS/My Drive/validation/valid/single"
+# "/home/edy/Desktop/Master/Semestrul 2/Research/AttnGAN-Python2/models/bird_AttnGAN2/valid/single/"
 
 def main():
-    print ("suntem in main!!!")
+    # print ("suntem in main!!!")
 
     big_dir = os.listdir(IMAGE_DIR)
     list_images = []
 
     for img_category in big_dir:
-        dir_path = IMAGE_DIR + img_category
+        dir_path = IMAGE_DIR + "/" + img_category
         # print (dir_path)
 
         list_img_paths = os.listdir(dir_path)
