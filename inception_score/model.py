@@ -36,7 +36,9 @@ def get_inception_score(images, splits=10):
     preds = []
     n_batches = int(math.ceil(float(len(inps)) / float(bs)))
     for i in range(n_batches):
-        sys.stdout.write(".")
+        # sys.stdout.write(".")
+        if i % 250 == 0:
+          print ("Currently at: " + str(i) + " out of " + str(n_batches) + " batches.")
         sys.stdout.flush()
         inp = inps[(i * bs):min((i + 1) * bs, len(inps))]
         inp = np.concatenate(inp, 0)

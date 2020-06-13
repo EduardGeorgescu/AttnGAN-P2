@@ -36,14 +36,16 @@ def main():
             # print (type(crt_img))
             list_images.append(crt_img)
 
-        print (str(index_dir) + "Total of" + str(cnt) + "images at" + img_category)
         index_dir += 1
+        print (str(index_dir) + ". Total of " + str(cnt) + " images at " + img_category)
 
     # print (list_img_paths)
-    print ("We have a total of:" + str(len(list_images)) + "images!")
-    results = get_inception_score(list_images)
+    print ("We have a total of: " + str(len(list_images)) + " images!")
+    nr_splits = 10
+    results = get_inception_score(list_images, splits=nr_splits)
 
     print ("Results are:", results)
+    print ("Nr_splits were: " + str(nr_splits))
 
 if __name__ == "__main__":
     main()
