@@ -15,6 +15,8 @@ def main():
     big_dir = sorted(big_dir)
     list_images = []
 
+    print ("IMAGE_DIR is" + IMAGE_DIR)
+
     index_dir = 0
     for img_category in big_dir:
         dir_path = IMAGE_DIR + "/" + img_category
@@ -34,7 +36,7 @@ def main():
             # print (type(crt_img))
             list_images.append(crt_img)
 
-        print (str(index_dir) + "Total of" + str(cnt) + "images at" + dir_path)
+        print (str(index_dir) + "Total of" + str(cnt) + "images at" + img_category)
         index_dir += 1
 
     # print (list_img_paths)
