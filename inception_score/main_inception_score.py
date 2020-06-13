@@ -12,8 +12,10 @@ def main():
     # print ("suntem in main!!!")
 
     big_dir = os.listdir(IMAGE_DIR)
+    big_dir = sorted(big_dir)
     list_images = []
 
+    index_dir = 0
     for img_category in big_dir:
         dir_path = IMAGE_DIR + "/" + img_category
         # print (dir_path)
@@ -32,10 +34,11 @@ def main():
             # print (type(crt_img))
             list_images.append(crt_img)
 
-        print ("Total of", cnt, "images at", dir_path)
+        print (str(index_dir) + "Total of" + str(cnt) + "images at" + dir_path)
+        index_dir += 1
 
     # print (list_img_paths)
-    print ("We have a total of:", len(list_images), "images!")
+    print ("We have a total of:" + str(len(list_images)) + "images!")
     results = get_inception_score(list_images)
 
     print ("Results are:", results)
