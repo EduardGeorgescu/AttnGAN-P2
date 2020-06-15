@@ -430,8 +430,8 @@ class condGANTrainer(object):
                     fake_imgs, _, _, _ = netG(noise, sent_emb, words_embs, mask)
                     for j in range(batch_size):
 
-                        if j % 10 == 0:
-                            print ("crt j:", j, "out of", batch_size)
+                        # if j % 10 == 0:
+                        #     print ("crt j:", j, "out of", batch_size)
 
                         s_tmp = '%s/single/%s' % (save_dir, keys[j])
                         folder = s_tmp[:s_tmp.rfind('/')]
