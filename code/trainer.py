@@ -395,7 +395,7 @@ class condGANTrainer(object):
 
             # the path to save generated images
             # s_tmp = model_dir[:model_dir.rfind('.pth')]
-            s_tmp = "/content/BIRDS/My Drive/validation"
+            s_tmp = "/content/BIRDS/MyDrive/validation"
             save_dir = '%s/%s' % (s_tmp, split_dir)
             mkdir_p(save_dir)
 
@@ -472,7 +472,7 @@ class condGANTrainer(object):
                 netG = G_NET()
             # Used for save location
             # s_tmp = cfg.TRAIN.NET_G[:cfg.TRAIN.NET_G.rfind('.pth')]
-            s_tmp = "/content/BIRDS/My Drive"
+            s_tmp = "/content/BIRDS/MyDrive"
             model_dir = cfg.TRAIN.NET_G
             state_dict = \
                 torch.load(model_dir, map_location=lambda storage, loc: storage)
