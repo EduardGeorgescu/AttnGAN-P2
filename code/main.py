@@ -113,7 +113,7 @@ if __name__ == "__main__":
     # output_dir = '../output/%s_%s_%s' % \
     #     (cfg.DATASET_NAME, cfg.CONFIG_NAME, timestamp)
 
-    output_dir = '/content/BIRDS/MyDrive/output/%s/%s_%s' % \
+    output_dir = '/content/DATASE_DRIVE/MyDrive/output/%s/%s_%s' % \
             (cfg.CONFIG_NAME, cfg.DATASET_NAME, timestamp)
 
     print ("main output dir is:", output_dir)
