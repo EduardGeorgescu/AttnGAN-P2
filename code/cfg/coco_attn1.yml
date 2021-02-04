@@ -12,7 +12,7 @@ TREE:
 
 TRAIN:
     FLAG: True
-    NET_G: /content/DATASET_DRIVE/MyDrive/coco_encoders/image_encoder100.pth  # /content/DATASET_DRIVE/MyDrive/MS_COCO/COCO_encoders/image_encoder100.pth
+    NET_G:  '' # /content/DATASET_DRIVE/MyDrive/coco_models/coco_AttnGAN2.pth  # /content/DATASET_DRIVE/MyDrive/MS_COCO/COCO_encoders/image_encoder100.pth
     B_NET_D: True
     BATCH_SIZE: 14  # 32
     MAX_EPOCH: 1
