@@ -138,12 +138,12 @@ class condGANTrainer(object):
         optimizersD = []
         num_Ds = len(netsD)
         for i in range(num_Ds):
-            opt = optim.Adam(netsD[i].parameters(),
+            opt = optim.Adamw(netsD[i].parameters(),
                              lr=cfg.TRAIN.DISCRIMINATOR_LR,
                              betas=(0.5, 0.999))
             optimizersD.append(opt)
 
-        optimizerG = optim.Adam(netG.parameters(),
+        optimizerG = optim.Adamw(netG.parameters(),
                                 lr=cfg.TRAIN.GENERATOR_LR,
                                 betas=(0.5, 0.999))
 
