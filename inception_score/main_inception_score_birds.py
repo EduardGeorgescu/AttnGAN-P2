@@ -16,28 +16,23 @@ def main():
     list_images = []
 
     print ("IMAGE_DIR is" + IMAGE_DIR)
+    print ("big_Dir is", big_dir)
 
-    index_dir = 0
-    for img_category in big_dir:
-        dir_path = IMAGE_DIR + "/" + img_category
-        # print (dir_path)
+    list_img_paths = big_dir
+    dir_path = IMAGE_DIR + "/"
 
-        list_img_paths = os.listdir(dir_path)
+    cnt = 0
+    for img_path in list_img_paths:
+        # print (img_path)
+        cnt += 1
 
-        cnt = 0
-        for img_path in list_img_paths:
-            # print (img_path)
-            cnt += 1
+        crt_path = dir_path + img_path
+        # print (crt_path)
+        
+        crt_img = cv2.imread(crt_path)
 
-            crt_path = dir_path + "/" + img_path
-            # print (crt_path)
-            crt_img = cv2.imread(crt_path)
-
-            # print (type(crt_img))
-            list_images.append(crt_img)
-
-        index_dir += 1
-        print (str(index_dir) + ". Total of " + str(cnt) + " images at " + img_category)
+        # print (type(crt_img))
+        list_images.append(crt_img)
 
     # print (list_img_paths)
     print ("We have a total of: " + str(len(list_images)) + " images!")
