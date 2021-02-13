@@ -17,25 +17,25 @@ def main():
 
     print ("IMAGE_DIR is" + IMAGE_DIR)
 
-    list_img_paths = os.listdir(big_dir)
+    list_img_paths = big_dir
 
     cnt = 0
     for img_path in list_img_paths:
         # print (img_path)
         cnt += 1
 
-        crt_path = dir_path + "/" + img_path
+        crt_path = IMAGE_DIR + "/" + img_path
         # print (crt_path)
         crt_img = cv2.imread(crt_path)
 
         # print (type(crt_img))
         list_images.append(crt_img)
 
-        index_dir += 1
+        # index_dir += 1
 
     # print (list_img_paths)
     print ("We have a total of: " + str(len(list_images)) + " images!")
-    nr_splits = 10
+    nr_splits = 1
     results = get_inception_score(list_images, splits=nr_splits)
 
     print ("Results are:", results)
