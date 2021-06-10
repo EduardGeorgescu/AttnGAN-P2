@@ -116,7 +116,7 @@ if __name__ == "__main__":
     output_dir = '/content/DATASET_DRIVE/MyDrive/output/%s/%s_%s' % \
             (cfg.CONFIG_NAME, cfg.DATASET_NAME, timestamp)
 
-    print ("main output dir is:", output_dir)
+    print("main output dir is:", output_dir)
 
     split_dir, bshuffle = 'train', True
     if not cfg.TRAIN.FLAG:
