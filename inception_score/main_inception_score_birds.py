@@ -27,12 +27,16 @@ def main():
         cnt += 1
 
         crt_path = dir_path + img_path
-        # print (crt_path)
+        for image_file in os.listdir(crt_path):
+          crt_path_img = crt_path + "/" + image_file
+          # print(crt_path_img)
+          # print("Files here:", os.listdir(crt_path))
+          # print (crt_path)
         
-        crt_img = cv2.imread(crt_path)
+          crt_img = cv2.imread(crt_path_img)
 
-        # print (type(crt_img))
-        list_images.append(crt_img)
+          # print (type(crt_img))
+          list_images.append(crt_img)
 
     # print (list_img_paths)
     print ("We have a total of: " + str(len(list_images)) + " images!")
@@ -44,3 +48,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
