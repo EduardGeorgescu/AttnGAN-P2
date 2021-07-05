@@ -1,0 +1,23 @@
+Link-uri pentru colab notebooks:
+RecipeQA:
+https://colab.research.google.com/drive/1h-fnRL575rZ9Dt9ROBAEgJHxO0M6MN3m?authuser=4#scrollTo=eMswQTQSXPa5
+
+CUB Birds
+https://colab.research.google.com/drive/1JGjRJPBHHYWFIrZx361vQgrJlSXXFcO_?authuser=1#scrollTo=xfyV6zvNIdQZ
+
+COCO
+https://colab.research.google.com/drive/1kyCtfs-C3n9E6KVipijfuziTkcCfWBUP?authuser=2#scrollTo=xfyV6zvNIdQZ
+
+
+
+Account-uri pentru seturi de date:
+cu parola: parola12#
+
+1. recipeqa.2021@gmail.com
+2. cub.research.2020@gmail.com
+3. new.coco.research.2020@gmail.com
+4. test.coco.research@gmail.com
+
+
+Repo original:
+https://github.com/taoxugit/AttnGAN
